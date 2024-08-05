@@ -1,6 +1,5 @@
 #include "queue.h"
-#include <unistd.h>
-#include <string.h>
+#include <stdio.h>
 
 // Conta o numero de elementos na fila
 // Retorno: numero de elementos na fila
@@ -9,9 +8,8 @@ queue_size(queue_t *queue)
 {
   int queueSize;
   int flag = 0;
-  const char *msgQueueNull = "Erro: queue esta NULL";
   if(queue == NULL){
-    write(2, msgQueueNull, strlen(msgQueueNull));
+    fprintf(stderr, "INFO: queue value => NULL\n");
     return 0;
   }
 
